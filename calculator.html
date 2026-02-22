@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input[type="text"] { width: 100%; padding: 10px; margin-bottom: 10px; }
+        input[type="button"] { padding: 10px; }
+        #result { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <input type="text" id="input" placeholder="Enter expression" />
+    <input type="button" value="Calculate" onclick="calculate()" />
+    <div id="result"></div>
+    <script>
+        function calculate() {
+            var input = document.getElementById('input').value;
+            var result;
+            try {
+                result = eval(input);
+            } catch (e) {
+                result = 'Error';
+            }
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+    </script>
+</body>
+</html>
